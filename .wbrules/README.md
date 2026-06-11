@@ -59,6 +59,8 @@ Files are prefixed to signal **when** the agent should load them:
 | [pre-6-api-building.md](./pre-6-api-building.md) | Design, contracts, HTTP semantics, security, and testing rules for building APIs |
 | [pre-7-api-integration.md](./pre-7-api-integration.md) | Reliability, security, contracts, error handling, and testing rules for consuming external APIs |
 | [pre-8-frontend-rules.md](./pre-8-frontend-rules.md) | Architecture, accessibility, performance, security, and platform rules for web, mobile, and desktop UI |
+| [pre-9-performance-rules.md](./pre-9-performance-rules.md) | Database indexing, query profiling, eager loading, algorithmic efficiency, caching, and resource management rules |
+| [pre-10-seo-rules.md](./pre-10-seo-rules.md) | Page metadata, title/description tags, HTML hierarchy, semantic markup, schema, and page loading speed rules |
 
 ### Post (apply after finishing work)
 

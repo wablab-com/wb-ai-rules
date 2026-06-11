@@ -72,7 +72,7 @@ Status icons:
 | 18 | No secrets, credentials, private keys, production tokens, or machine paths committed | ⏳ |
 | 19 | No large dependencies added without explicit approval | ⏳ |
 | 20 | Errors fail fast with explicit, meaningful messages — no silent swallowing of exceptions | ⏳ |
-| 21 | Inputs validated and guarded against injection, path traversal, auth bypass, and data exposure | ⏳ |
+| 21 | Inputs validated and guarded against XSS, CSRF/session riding, session hijacking, SQL injection, directory traversal, and data exposure | ⏳ |
 | 22 | No tests removed to make CI pass | ⏳ |
 | 23 | Unrelated user worktree changes preserved and not reverted | ⏳ |
 
@@ -147,16 +147,44 @@ Status icons:
 
 ---
 
+### ⚡ During — Performance
+> Rule source: `pre-9-performance-rules.md` — mark `➖` if no database design, query changes, or complex code paths
+
+| # | Item | Status |
+|---|---|---|
+| 61 | Indexes created or verified for all search filters, foreign keys, and sorting fields in affected schemas | ⏳ |
+| 62 | Database queries profiled (e.g. using `EXPLAIN`) and optimized to avoid N+1 issues and full table scans | ⏳ |
+| 63 | Large datasets batched, paginated, or streamed to prevent high memory consumption | ⏳ |
+| 64 | Algorithmic complexity minimized, and caching applied to computationally expensive hot paths | ⏳ |
+
+---
+
+### 🔍 During — Search Engine Optimisation (SEO)
+> Rule source: `pre-10-seo-rules.md` — mark `➖` if no web frontend or public-facing route changes
+
+| # | Item | Status |
+|---|---|---|
+| 65 | Descriptive title tag and compelling meta description set for every public web page | ⏳ |
+| 66 | Strict heading hierarchy starting with a single H1 and semantic HTML structure implemented | ⏳ |
+| 67 | Canonical tags, robots directives, and schema markup (JSON-LD) configured correctly | ⏳ |
+| 68 | All links use descriptive anchor text and all images have descriptive alt attributes | ⏳ |
+
+---
+
 ### 🧪 Post-task — Tests
 > Rule source: `post-0-tests.md`
 
 | # | Item | Status |
 |---|---|---|
-| 61 | Tests added or updated for every behavior change | ⏳ |
-| 62 | Regression test added for any bug fixed (when reliably capturable) | ➖ |
-| 63 | Failing tests fixed before closing — or user has explicitly accepted a known unrelated failure | ⏳ |
-| 64 | Fast unit tests used for isolated logic; integration/E2E used for critical flows | ⏳ |
-| 65 | Relevant test suite or build validation run — result reported | ⏳ |
+| 69 | Tests added or updated for every behavior change | ⏳ |
+| 70 | Regression test added for any bug fixed (when reliably capturable) | ➖ |
+| 71 | Failing tests fixed before closing — or user has explicitly accepted a known unrelated failure | ⏳ |
+| 72 | Fast unit tests used for isolated logic; integration/E2E used for critical flows | ⏳ |
+| 73 | Relevant test suite or build validation run — result reported | ⏳ |
+| 74 | All edge cases, input validation failures, boundary conditions, error paths, and happy paths identified and tested with unit tests | ⏳ |
+| 75 | Database-interacting tests strictly configured to use a dedicated, isolated test database to prevent damage to the main database | ⏳ |
+| 76 | Tests kept independent and isolated by mocking/stubbing external APIs, side-effects, and dependencies | ⏳ |
+| 77 | Separate, dedicated unit or integration tests written to explicitly cover security controls and vulnerability vectors (XSS, CSRF, session hijacking/riding, SQL injection, directory traversal) | ⏳ |
 
 ---
 
@@ -165,9 +193,9 @@ Status icons:
 
 | # | Item | Status |
 |---|---|---|
-| 66 | At least one existing build warning fixed (when practical and not explicitly scoped out) | ⏳ |
-| 67 | No warnings hidden or diagnostics weakened | ⏳ |
-| 68 | Generated outputs, caches, and local artifacts excluded from source control | ⏳ |
+| 78 | At least one existing build warning fixed (when practical and not explicitly scoped out) | ⏳ |
+| 79 | No warnings hidden or diagnostics weakened | ⏳ |
+| 80 | Generated outputs, caches, and local artifacts excluded from source control | ⏳ |
 
 ---
 
@@ -176,14 +204,14 @@ Status icons:
 
 | # | Item | Status |
 |---|---|---|
-| 69 | All affected `.wbdocs/` pages updated | ⏳ |
-| 70 | Any fact or knowledge gained (even from a question) written into the relevant doc immediately | ⏳ |
-| 71 | Newly discovered domain/feature/store/table/integration doc created using correct template | ➖ |
-| 72 | New doc registered in its index file (domains, database, or frontend index) | ➖ |
-| 73 | `.wbdocs/domains/index.md` consistent with the current domain list | ⏳ |
-| 74 | Database store doc updated — schema, migrations, backup/restore notes current | ➖ |
-| 75 | Frontend standards doc updated — new libs, tokens, or component patterns recorded | ➖ |
-| 76 | No project-specific content added to `.wbrules/` | ✅ |
+| 81 | All affected `.wbdocs/` pages updated | ⏳ |
+| 82 | Any fact or knowledge gained (even from a question) written into the relevant doc immediately | ⏳ |
+| 83 | Newly discovered domain/feature/store/table/integration doc created using correct template | ➖ |
+| 84 | New doc registered in its index file (domains, database, or frontend index) | ➖ |
+| 85 | `.wbdocs/domains/index.md` consistent with the current domain list | ⏳ |
+| 86 | Database store doc updated — schema, migrations, backup/restore notes current | ➖ |
+| 87 | Frontend standards doc updated — new libs, tokens, or component patterns recorded | ➖ |
+| 88 | No project-specific content added to `.wbrules/` | ✅ |
 
 ---
 
