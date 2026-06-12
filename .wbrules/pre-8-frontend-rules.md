@@ -8,7 +8,11 @@ Load this file before starting any task that involves UI, views, components, scr
 
 This section is mandatory. Violating it produces inconsistent UIs that break the established design system.
 
-### Docs protocol
+### Docs protocol (MUST MUST MUST Read and Modify)
+
+- **MUST MUST MUST read before starting**: The agent **MUST MUST MUST** always read the frontend standards document (`.wbdocs/frontend/index.md`) in full before writing any frontend code, components, templates, or styles.
+- **MUST MUST MUST modify after changes**: The agent **MUST MUST MUST** always modify/update `.wbdocs/frontend/index.md` immediately after making any changes to the frontend structure, style tokens, layouts, colors, or components.
+- **Document standard colors & layouts**: You **MUST** always document the library/framework colors and layouts in `.wbdocs/frontend/index.md` to establish a project standard. Once documented, the agent **MUST** always follow this standard and design tokens without deviation.
 
 > See `pre-0-documentation-first.md` for the universal read/update protocol. For this area, read `.wbdocs/frontend/index.md` before starting. If it does not exist, create it using `.wbrules/templates/frontend-index.md` first. If you discover a new component pattern, library, or UI convention during the task, document it before finishing.
 
@@ -21,10 +25,12 @@ This section is mandatory. Violating it produces inconsistent UIs that break the
 
 ### Always use the established design system
 
+- **Follow documented standard colors and layouts**: Always use the colors, layout schemes, and design tokens documented in `.wbdocs/frontend/index.md`. Once a standard is made, it **MUST** always be followed. Never use hardcoded colors or custom layout patterns that deviate from the documented standard.
 - Use the project's documented design tokens: color palette, typography scale, spacing scale, border radii, shadows, and z-index layers. Never hardcode raw values that should come from tokens.
 - Use the project's existing component patterns: buttons, modals, drawers, toasts, forms, tables, badges, and navigation elements. Never create a parallel version of an existing component.
 - Use the project's documented layout structure: grid system, page shell, sidebar, header, and footer conventions.
 - Match the project's established theme (dark/light mode, brand colors, font families). Never apply a different theme to a new screen.
+- **Rely on partials as much as possible**: Rely on partials (reusable layout or UI fragments, components, and templates) as much as possible. Do not write large, monolithic UI files when parts of it can be broken down into partials.
 
 ### When standards need to change
 
@@ -37,6 +43,7 @@ This section is mandatory. Violating it produces inconsistent UIs that break the
 
 ### Architecture
 
+- **Rely on partials as much as possible**: The agent **MUST** rely on partials (reusable sub-views, template partials, components, or modular layout fragments) as much as possible. Avoid writing large, monolithic UI files when parts of it can be extracted into partials.
 - Keep UI components thin. Business logic belongs in services, view models, or domain modules — not in components, screens, or widgets.
 - Keep components small and single-purpose. Split when a component grows beyond one clear responsibility.
 - Separate presentational (dumb) components from container (smart) components. Presentational components must not call APIs or trigger side effects directly.
@@ -168,7 +175,8 @@ This section is mandatory. Violating it produces inconsistent UIs that break the
 
 ## Documentation
 
-- `.wbdocs/frontend/index.md` is the single source of truth for the project's UI stack and standards. Keep it current.
+- `.wbdocs/frontend/index.md` is the single source of truth for the project's UI stack and standards. Keep it current. It is mandatory to document library colors, layouts, and component patterns here to make a standard, and the agent **MUST** always follow this standard.
 - Use `.wbrules/templates/frontend-index.md` to create it if it does not yet exist.
+- The agent **MUST MUST MUST** always read these standards docs (`.wbdocs/frontend/index.md`) before doing any frontend or UI work.
+- The agent **MUST MUST MUST** always modify/update `.wbdocs/frontend/index.md` immediately after making any changes to the frontend (e.g., changing colors, layouts, adding or editing components/partials).
 - Create a feature doc at `.wbdocs/features/<feature-name>.md` for any UI feature with non-trivial flows, state, or integration.
-- When adding a new screen, component pattern, library, or UI convention, update `.wbdocs/frontend/index.md` immediately — before closing the task.

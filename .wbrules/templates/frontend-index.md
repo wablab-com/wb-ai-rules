@@ -1,8 +1,8 @@
 # Frontend Standards
 
-This file is the single source of truth for the UI standards of `<PROJECT_NAME>`. All agents must read this file before writing any UI code and must update it when standards change.
+This file is the single source of truth for the UI standards of `<PROJECT_NAME>`. All agents **MUST MUST MUST** read this file before writing any UI/frontend code, and **MUST MUST MUST** update it immediately when standards, layouts, colors, or components change.
 
-> Agents: do not introduce libraries, tokens, themes, or component patterns that are not listed here without explicit user approval. If something is missing, add it to this file before implementing it.
+> Agents: do not introduce libraries, tokens, themes, layout schemes, colors, or component patterns that are not listed here without explicit user approval. Once documented here, you MUST follow these standards. You must also rely on partials as much as possible to build UIs.
 
 ---
 
@@ -26,9 +26,9 @@ This file is the single source of truth for the UI standards of `<PROJECT_NAME>`
 
 ---
 
-## Design Tokens
+## Design Tokens & Standards
 
-Agents must use these tokens for all styling. Never hardcode raw values.
+Agents must use these tokens and documented standards for all styling, colors, and layouts. Never hardcode raw values or deviate from these structures.
 
 ### Colors
 

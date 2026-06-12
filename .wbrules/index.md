@@ -133,10 +133,10 @@ Status icons:
 
 | # | Item | Status |
 |---|---|---|
-| 50 | `.wbdocs/frontend/index.md` read before writing any component, screen, or style | ➖ |
+| 50 | `.wbdocs/frontend/index.md` read before writing any component, screen, or style (**MUST MUST MUST** read before starting) | ➖ |
 | 51 | No new UI framework, component library, icon set, or styling system introduced without approval | ➖ |
-| 52 | Established design tokens used — no hardcoded raw colors, spacing, or font values | ➖ |
-| 53 | Existing component patterns used — no parallel version of an existing component created | ➖ |
+| 52 | Established design tokens, library colors, and layouts followed — no hardcoded colors or custom layouts deviating from the standard | ➖ |
+| 53 | Existing component patterns and partials used — **relied on partials as much as possible** and no parallel version of an existing component created | ➖ |
 | 54 | Established layout structure, grid, and theme followed — no different theme on new screens | ➖ |
 | 55 | Loading, error, and empty states handled for every data-dependent UI surface | ➖ |
 | 56 | Business logic kept out of components — placed in services or view models | ➖ |
@@ -210,7 +210,7 @@ Status icons:
 | 84 | New doc registered in its index file (domains, database, or frontend index) | ➖ |
 | 85 | `.wbdocs/domains/index.md` consistent with the current domain list | ⏳ |
 | 86 | Database store doc updated — schema, migrations, backup/restore notes current | ➖ |
-| 87 | Frontend standards doc updated — new libs, tokens, or component patterns recorded | ➖ |
+| 87 | Frontend standards doc updated — new libs, colors, layouts, tokens, or component patterns recorded (**MUST MUST MUST** update after any change) | ➖ |
 | 88 | No project-specific content added to `.wbrules/` | ✅ |
 
 ---
