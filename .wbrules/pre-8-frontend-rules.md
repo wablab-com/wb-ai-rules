@@ -30,7 +30,7 @@ This section is mandatory. Violating it produces inconsistent UIs that break the
 - Use the project's existing component patterns: buttons, modals, drawers, toasts, forms, tables, badges, and navigation elements. Never create a parallel version of an existing component.
 - Use the project's documented layout structure: grid system, page shell, sidebar, header, and footer conventions.
 - Match the project's established theme (dark/light mode, brand colors, font families). Never apply a different theme to a new screen.
-- **Rely on partials as much as possible**: Rely on partials (reusable layout or UI fragments, components, and templates) as much as possible. Do not write large, monolithic UI files when parts of it can be broken down into partials.
+- **Rely on partials, layouts, and abstraction**: Rely on partials (reusable UI/template fragments, components, and templates) and layout abstractions as much as possible. Everything in the frontend must be properly abstracted (e.g., colors, layouts, styling, components, and UI logic). Do not write large, monolithic UI files when parts of it can be broken down into partials or layout components.
 
 ### When standards need to change
 
@@ -43,7 +43,7 @@ This section is mandatory. Violating it produces inconsistent UIs that break the
 
 ### Architecture
 
-- **Rely on partials as much as possible**: The agent **MUST** rely on partials (reusable sub-views, template partials, components, or modular layout fragments) as much as possible. Avoid writing large, monolithic UI files when parts of it can be extracted into partials.
+- **Rely on partials and layout abstractions**: In addition to partials and page/screen layouts, **everything** in the frontend must be properly abstracted. The agent **MUST** rely on partials (reusable sub-views, template partials, components, or modular layout fragments) as much as possible. Avoid writing large, monolithic UI files when parts of it can be extracted into partials and modular layout components.
 - Keep UI components thin. Business logic belongs in services, view models, or domain modules — not in components, screens, or widgets.
 - Keep components small and single-purpose. Split when a component grows beyond one clear responsibility.
 - Separate presentational (dumb) components from container (smart) components. Presentational components must not call APIs or trigger side effects directly.

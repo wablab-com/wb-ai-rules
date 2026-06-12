@@ -2,7 +2,7 @@
 
 This file is the single source of truth for the UI standards of `<PROJECT_NAME>`. All agents **MUST MUST MUST** read this file before writing any UI/frontend code, and **MUST MUST MUST** update it immediately when standards, layouts, colors, or components change.
 
-> Agents: do not introduce libraries, tokens, themes, layout schemes, colors, or component patterns that are not listed here without explicit user approval. Once documented here, you MUST follow these standards. You must also rely on partials as much as possible to build UIs.
+> Agents: do not introduce libraries, tokens, themes, layout schemes, colors, or component patterns that are not listed here without explicit user approval. Once documented here, you MUST follow these standards. You must rely on partials and layout abstractions as much as possible to build UIs; everything in the frontend must be properly abstracted.
 
 ---
 

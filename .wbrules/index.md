@@ -136,7 +136,7 @@ Status icons:
 | 50 | `.wbdocs/frontend/index.md` read before writing any component, screen, or style (**MUST MUST MUST** read before starting) | ➖ |
 | 51 | No new UI framework, component library, icon set, or styling system introduced without approval | ➖ |
 | 52 | Established design tokens, library colors, and layouts followed — no hardcoded colors or custom layouts deviating from the standard | ➖ |
-| 53 | Existing component patterns and partials used — **relied on partials as much as possible** and no parallel version of an existing component created | ➖ |
+| 53 | Existing component patterns, layout abstractions, and partials used — **relied on partials and layouts, and abstracted everything** | ➖ |
 | 54 | Established layout structure, grid, and theme followed — no different theme on new screens | ➖ |
 | 55 | Loading, error, and empty states handled for every data-dependent UI surface | ➖ |
 | 56 | Business logic kept out of components — placed in services or view models | ➖ |
