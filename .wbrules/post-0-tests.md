@@ -2,6 +2,8 @@
 
 Run this checklist after completing any code change.
 
+- Before running any test command, confirm the current environment from `.wbdocs/environment.md`.
+- Do not run unit tests, automated tests, integration tests, end-to-end tests, seeders, fixture loaders, destructive scripts, or database-interacting tests in `production` unless the user gives explicit, task-specific approval and the command is documented as production-safe.
 - Add or update tests for every behavior change made.
 - Add regression tests for bugs when the bug can be captured reliably.
 - Fix failing tests before considering the task done, unless the user explicitly accepts a known unrelated failure.

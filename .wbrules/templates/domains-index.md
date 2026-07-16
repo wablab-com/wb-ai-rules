@@ -6,6 +6,8 @@ This document provides a high-level map of `<PROJECT_NAME>`, outlining the prima
 
 Each domain entry should be exactly one concise paragraph. Cover responsibility, boundaries, interactions with other domains, cross-cutting concerns, and the detailed document agents must read before changing that domain. Use `.wbrules/templates/domain-doc.md` when creating a domain detail page.
 
+Environment classification is mandatory for every task and is tracked separately in `.wbdocs/environment.md`. Keep any Environment domain entry here focused on application behavior owned by the environment/configuration domain, not on secret values.
+
 ## Example Domain A
 
 The Example Domain A owns `<PRIMARY_RESPONSIBILITY>`, including `<KEY_CAPABILITY_1>` and `<KEY_CAPABILITY_2>`. It consumes `<UPSTREAM_DEPENDENCY>` and provides `<DOWNSTREAM_CONTRACT>` to `<OTHER_DOMAIN>`, but it does not own `<EXPLICIT_NON_RESPONSIBILITY>`. Agents must read `.wbdocs/domains/<domain-name>.md` before touching this domain and must maintain that file after any related change.

@@ -21,6 +21,8 @@ Status icons:
 | # | Item | Status |
 |---|---|---|
 | 1 | Read `.wbdocs/index.md` | ⏳ |
+| 2a | Read `.wbdocs/environment.md` and confirmed current environment registration | ⏳ |
+| 2b | If environment was unregistered, asked user for environment type and updated `.wbdocs/environment.md` before proceeding | ➖ |
 | 2 | Read relevant domain doc(s) at `.wbdocs/domains/` | ⏳ |
 | 3 | Read relevant feature doc(s) at `.wbdocs/features/` | ⏳ |
 | 4 | Read relevant database store doc(s) at `.wbdocs/database/` | ⏳ |
@@ -69,7 +71,9 @@ Status icons:
 
 | # | Item | Status |
 |---|---|---|
-| 18 | No secrets, credentials, private keys, production tokens, or machine paths committed | ⏳ |
+| 18 | No secrets, credentials, private keys, production tokens, or sensitive machine paths committed | ⏳ |
+| 18a | Production data, databases, credentials, backups, queues, caches, logs, and external services treated as critical with explicit approval for risky writes | ⏳ |
+| 18b | No unit, automated, integration, E2E, seeding, fixture, destructive, or database-interacting tests run on production without explicit task-specific approval | ⏳ |
 | 19 | No large dependencies added without explicit approval | ⏳ |
 | 20 | Errors fail fast with explicit, meaningful messages — no silent swallowing of exceptions | ⏳ |
 | 21 | Inputs validated and guarded against XSS, CSRF/session riding, session hijacking, SQL injection, directory traversal, and data exposure | ⏳ |
@@ -180,6 +184,7 @@ Status icons:
 | 70 | Regression test added for any bug fixed (when reliably capturable) | ➖ |
 | 71 | Failing tests fixed before closing — or user has explicitly accepted a known unrelated failure | ⏳ |
 | 72 | Fast unit tests used for isolated logic; integration/E2E used for critical flows | ⏳ |
+| 73a | Current environment confirmed non-production before running tests, or production-safe test approval documented | ⏳ |
 | 73 | Relevant test suite or build validation run — result reported | ⏳ |
 | 74 | All edge cases, input validation failures, boundary conditions, error paths, and happy paths identified and tested with unit tests | ⏳ |
 | 75 | Database-interacting tests strictly configured to use a dedicated, isolated test database to prevent damage to the main database | ⏳ |

@@ -2,6 +2,8 @@
 
 - Do not remove tests to pass CI.
 - Do not add large dependencies without approval.
+- Read `.wbdocs/environment.md` before acting. If the current environment is unregistered, ask the user whether it is `production`, `staging`, `dev`, `local`, or `test`, then update `.wbdocs/environment.md` with safe non-secret fingerprints before continuing.
+- In `production`, do not run unit tests, automated tests, integration tests, end-to-end tests, seeders, destructive scripts, migrations, or data mutation commands unless the user gives explicit, task-specific approval and the command is documented as production-safe.
 - Fail fast with explicit, meaningful errors; do not swallow exceptions silently.
 - Treat security as correctness. The agent must make sure that all written code is secure and free of vulnerabilities, covering:
   - Cross-Site Scripting (XSS): Ensure proper output encoding, context-aware escaping, and Content Security Policy compliance.
@@ -11,4 +13,5 @@
   - Directory Traversal (Path Injection): Validate, sanitize, and canonicalize all file paths; restrict file access to predefined safe directories.
 - Write dedicated, separate security unit tests that explicitly cover security checks and test vulnerabilities (e.g., verifying XSS filters, anti-CSRF token verification, session guards, SQL injection rejection, and directory traversal blocks).
 - Do not commit secrets, credentials, private keys, production tokens, personal machine paths, or private operational data.
+- In `production`, treat data, databases, credentials, backups, queues, caches, logs, and external services as critical. Prefer read-only actions, request explicit approval for writes, and document backup/rollback expectations before risky work.
 - Preserve user changes in the worktree. Do not revert unrelated modified files unless the user explicitly asks.

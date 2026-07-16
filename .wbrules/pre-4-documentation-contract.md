@@ -17,6 +17,7 @@ are stored under `.wbdocs/` in the project repository — **not** in `.wbrules/`
 Load in this order when starting any task:
 
 - `.wbdocs/index.md` — top-level index; defines ownership and loading order for all docs in this project.
+- `.wbdocs/environment.md` — mandatory environment registry; maps safe host fingerprints to `production`, `staging`, `dev`, `local`, or `test`, and defines environment-specific safety rules.
 - `.wbdocs/domains/index.md` — one paragraph per domain; covers responsibility, boundaries, interactions, and cross-cutting concerns.
 - `.wbdocs/frontend/index.md` — frontend structure, theming, libraries, state management, routing, and verification.
 - `.wbdocs/database/index.md` — data stores, ownership, schema/migration paths, access patterns, and backup/restore notes.
@@ -29,13 +30,14 @@ Use this model when the project is large enough to warrant it:
 
 | Layer | Location | Purpose |
 |---|---|---|
-| Layer 1 | `.wbdocs/index.md`, `.wbdocs/domains/index.md` | Index pages — map ownership and loading order |
+| Layer 1 | `.wbdocs/index.md`, `.wbdocs/environment.md`, `.wbdocs/domains/index.md` | Index and safety pages — map ownership, loading order, runtime environment, and guardrails |
 | Layer 2 | `.wbdocs/domains/<domain-name>.md` | Domain pages — summarize features and boundaries |
 | Layer 3 | `.wbdocs/domains/<domain-name>/<feature>.md` | Feature pages — detailed behavior, flows, files, data model, integrations, config, security, and testing |
 
 ## Page content rules
 
 - **Domain index** (`.wbdocs/domains/index.md`): one paragraph per domain; cover responsibility, boundaries, interactions, and cross-cutting concerns; keep it concise.
+- **Environment registry** (`.wbdocs/environment.md`): list each known environment with safe host fingerprints, environment type, safety policy, test policy, data/credential risk notes, and escalation requirements.
 - **Domain page** (`.wbdocs/domains/<domain-name>.md`): one paragraph per feature or major subsystem; include purpose, public behavior, rules and constraints, and references to detailed docs.
 - **Feature page**: cover behavior and flows, key files/classes, data model, integrations, config, security, and testing.
 - **High-level index pages**: stay concise and avoid changelogs.
@@ -47,6 +49,7 @@ Reusable doc templates live in `.wbrules/templates/`. Use them when creating new
 | Template | Use for |
 |---|---|
 | [templates/domains-index.md](./templates/domains-index.md) | Domain index at `.wbdocs/domains/index.md` |
+| [templates/environment-doc.md](./templates/environment-doc.md) | Environment registry at `.wbdocs/environment.md` |
 | [templates/domain-doc.md](./templates/domain-doc.md) | New domain page at `.wbdocs/domains/<domain-name>.md` |
 | [templates/features-index.md](./templates/features-index.md) | Features folder index at `.wbdocs/features/index.md` |
 | [templates/feature-doc.md](./templates/feature-doc.md) | New feature page at `.wbdocs/features/<feature-name>.md` |

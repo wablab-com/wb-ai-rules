@@ -24,6 +24,7 @@ Reading and maintaining docs is the single most important practice in this rules
 
 - **`pre-0-documentation-first.md` MUST be loaded before any other file.**
 - Read `.wbdocs/index.md` before every task — code, investigation, or question.
+- Read `.wbdocs/environment.md` immediately after `.wbdocs/index.md` before every task, confirm the current environment is registered, and ask the user to classify unknown environments before proceeding.
 - Update affected docs after every task — even if no code changed.
 - A task is not done until the docs reflect the current state of the system.
 
@@ -86,6 +87,7 @@ Reusable doc starters live in `templates/`. Copy and fill them when creating new
 | Template | Use for |
 |---|---|
 | [templates/domains-index.md](./templates/domains-index.md) | Domain index at `.wbdocs/domains/index.md` |
+| [templates/environment-doc.md](./templates/environment-doc.md) | Environment registry at `.wbdocs/environment.md` |
 | [templates/domain-doc.md](./templates/domain-doc.md) | New domain page at `.wbdocs/domains/<domain-name>.md` |
 | [templates/features-index.md](./templates/features-index.md) | Features folder index at `.wbdocs/features/index.md` |
 | [templates/feature-doc.md](./templates/feature-doc.md) | New feature page at `.wbdocs/features/<feature-name>.md` |
