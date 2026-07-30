@@ -26,8 +26,8 @@ Record only safe identifiers. Do not store secrets, credentials, tokens, private
 
 ## Local Tooling Notes
 
-- Git commit and push are available through plain Git in the local rules workspace.
-- GitHub CLI (`gh`) is not installed in the local rules workspace as of the latest publish check; use plain Git for commit/push tasks unless `gh` is installed later.
+- Use plain Git commands for commit and push tasks in the local rules workspace.
+- GitHub CLI (`gh`) is not required for commit/push tasks in this repository.
 
 ## Fingerprint Guidance
 
