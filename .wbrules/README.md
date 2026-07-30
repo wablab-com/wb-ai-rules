@@ -2,7 +2,7 @@
 
 Generic, reusable agent rules that apply to **any** project this folder is attached to.
 
-> 📋 **Agent working checklist:** [`index.md`](./index.md) — maintain and report its status in every progress update and in the final completion message.
+> 📋 **Agent working checklist:** [`index.md`](./index.md) — use as a milestone source checklist, select the items applicable to each task, and report the scoped checklist once in the final completion message.
 
 ---
 

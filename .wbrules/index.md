@@ -2,9 +2,18 @@
 
 ## Rule
 
-During every task, the agent **MUST** maintain and report the status of the checklist below:
-- In **every progress update** shared with the user during the task.
-- In the **final completion message** when the task is closed.
+This file is the full **milestone source checklist** for agent work. During every task or question, the agent **MUST**:
+
+1. Understand the user's task or question before acting.
+2. Select only the checklist items that apply to that specific task.
+3. Maintain that scoped sub-checklist internally while working.
+4. Report the scoped sub-checklist **once**, in the final completion message when the task is closed.
+
+Do not paste the checklist into every progress update. Progress updates should briefly describe current work, decisions, blockers, or validation status. If the user explicitly asks for checklist status during the task, report only the scoped sub-checklist selected for that task.
+
+The documentation-update milestone remains mandatory after every task, including questions. Items 81 and 82 are always applicable when anything was changed, learned, clarified, or discovered; update the relevant `.wbdocs/` page before closing the task.
+
+Milestone headings describe when an item must be satisfied. Some gates, especially documentation discovery, can be triggered during scoping, investigation, or implementation; when triggered, satisfy the gate before proceeding in the affected area.
 
 Status icons:
 - `⏳` pending or in progress
@@ -13,9 +22,9 @@ Status icons:
 
 ---
 
-## Checklist
+## Milestone Source Checklist
 
-### 📖 Pre-task — Documentation Reading
+### 📖 Startup — Documentation and Environment
 > Rule source: `pre-0-documentation-first.md`
 
 | # | Item | Status |
@@ -30,18 +39,26 @@ Status icons:
 
 ---
 
-### 🔍 Pre-task — Discovery
+### 🔍 Scoping — Impact Map
 > Rule source: `pre-0-documentation-first.md`
 
 | # | Item | Status |
 |---|---|---|
 | 6 | Identified all domains, features, stores, tables, and integrations touched by this task | ⏳ |
-| 7 | Created doc(s) for any undocumented area using the correct template before proceeding | ➖ |
+
+---
+
+### 🧭 Discovery Gate — Missing Documentation
+> Rule source: `pre-0-documentation-first.md`
+
+| # | Item | Status |
+|---|---|---|
+| 7 | If an undocumented area was discovered, created doc(s) using the correct template before proceeding in that area | ➖ |
 | 8 | Registered every new doc in its relevant index file | ➖ |
 
 ---
 
-### 🧠 During — Core Principles
+### 🧠 Work — Core Principles
 > Rule source: `pre-1-core-principles.md`
 
 | # | Item | Status |
@@ -53,7 +70,7 @@ Status icons:
 
 ---
 
-### 🏗️ During — Code Structure
+### 🏗️ Work — Code Structure
 > Rule source: `pre-2-code-structure.md`
 
 | # | Item | Status |
@@ -66,7 +83,7 @@ Status icons:
 
 ---
 
-### 🔒 During — Safety and Security
+### 🔒 Work — Safety and Security
 > Rule source: `pre-3-safety-and-design.md`
 
 | # | Item | Status |
@@ -82,7 +99,7 @@ Status icons:
 
 ---
 
-### 🗄️ During — Database
+### 🗄️ Work — Database
 > Rule source: `pre-5-database-rules.md` — mark `➖` if no database work
 
 | # | Item | Status |
@@ -96,7 +113,7 @@ Status icons:
 
 ---
 
-### 🔌 During — API Building
+### 🔌 Work — API Building
 > Rule source: `pre-6-api-building.md` — mark `➖` if not building or modifying an API
 
 | # | Item | Status |
@@ -115,7 +132,7 @@ Status icons:
 
 ---
 
-### 🌐 During — API Integration
+### 🌐 Work — API Integration
 > Rule source: `pre-7-api-integration.md` — mark `➖` if not consuming an external API
 
 | # | Item | Status |
@@ -132,7 +149,7 @@ Status icons:
 
 ---
 
-### 🖥️ During — Frontend and UI
+### 🖥️ Work — Frontend and UI
 > Rule source: `pre-8-frontend-rules.md` — mark `➖` if no UI work
 
 | # | Item | Status |
@@ -151,7 +168,7 @@ Status icons:
 
 ---
 
-### ⚡ During — Performance
+### ⚡ Work — Performance
 > Rule source: `pre-9-performance-rules.md` — mark `➖` if no database design, query changes, or complex code paths
 
 | # | Item | Status |
@@ -163,7 +180,7 @@ Status icons:
 
 ---
 
-### 🔍 During — Search Engine Optimisation (SEO)
+### 🔍 Work — Search Engine Optimisation (SEO)
 > Rule source: `pre-10-seo-rules.md` — mark `➖` if no web frontend or public-facing route changes
 
 | # | Item | Status |
@@ -175,7 +192,7 @@ Status icons:
 
 ---
 
-### 🧪 Post-task — Tests
+### 🧪 Validation — Tests
 > Rule source: `post-0-tests.md`
 
 | # | Item | Status |
@@ -193,7 +210,7 @@ Status icons:
 
 ---
 
-### 🧹 Post-task — Build Hygiene
+### 🧹 Validation — Build Hygiene
 > Rule source: `post-1-build-hygiene.md`
 
 | # | Item | Status |
@@ -204,7 +221,7 @@ Status icons:
 
 ---
 
-### 📝 Post-task — Documentation Updates
+### 📝 Closeout — Documentation Updates
 > Rule source: `post-2-update-documentation.md`
 
 | # | Item | Status |
@@ -222,7 +239,7 @@ Status icons:
 
 ## How to report
 
-Copy and paste the relevant sections into your progress update or final completion message, updating each status icon. Example format:
+At task completion, copy only the task-specific scoped sub-checklist into the final completion message, updating each status icon. Include non-applicable items only when they clarify why an entire milestone area was skipped. Example format:
 
 ```
 ## Task complete — <short title>
@@ -238,4 +255,4 @@ Copy and paste the relevant sections into your progress update or final completi
 ...
 ```
 
-If any item remains `⏳` in the final message, explain why it is still pending or blocked.
+If any item remains `⏳` in the final message, explain why it is still pending or blocked. Do not close the task while mandatory documentation-update items are pending.
