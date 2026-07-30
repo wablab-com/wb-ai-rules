@@ -37,7 +37,7 @@ Use this model when the project is large enough to warrant it:
 ## Page content rules
 
 - **Domain index** (`.wbdocs/domains/index.md`): one paragraph per domain; cover responsibility, boundaries, interactions, and cross-cutting concerns; keep it concise.
-- **Environment registry** (`.wbdocs/environment.md`): list each known environment with safe host fingerprints, environment type, safety policy, test policy, data/credential risk notes, and escalation requirements.
+- **Environment registry** (`.wbdocs/environment.md`): list each known environment with enough safe host fingerprints to identify it reliably, environment type, safety policy, test policy, data/credential risk notes, and escalation requirements. Hostname alone is not sufficient unless documented as unique.
 - **Domain page** (`.wbdocs/domains/<domain-name>.md`): one paragraph per feature or major subsystem; include purpose, public behavior, rules and constraints, and references to detailed docs.
 - **Feature page**: cover behavior and flows, key files/classes, data model, integrations, config, security, and testing.
 - **High-level index pages**: stay concise and avoid changelogs.

@@ -4,7 +4,7 @@ This domain documents the reusable agent rules and templates maintained in this 
 
 ## Documentation-First Protocol
 
-The documentation-first protocol owns mandatory reading of `.wbdocs/index.md`, `.wbdocs/environment.md`, relevant domain docs, and affected `.wbdocs/` pages before tasks, plus mandatory documentation updates after every task when anything is changed, learned, clarified, or discovered. Its source files include `.wbrules/pre-0-documentation-first.md`, `.wbrules/pre-4-documentation-contract.md`, `.wbrules/post-2-update-documentation.md`, and the relevant templates under `.wbrules/templates/`.
+The documentation-first protocol owns mandatory reading of `.wbdocs/index.md`, `.wbdocs/environment.md`, relevant domain docs, and affected `.wbdocs/` pages before tasks, plus mandatory documentation updates after every task when anything is changed, learned, clarified, or discovered. Environment registration must use enough safe fingerprints to identify the runtime reliably; hostname alone is only sufficient when documented as unique and stable. Its source files include `.wbrules/pre-0-documentation-first.md`, `.wbrules/pre-4-documentation-contract.md`, `.wbrules/post-2-update-documentation.md`, and the relevant templates under `.wbrules/templates/`.
 
 ## Agent Working Checklist
 

@@ -4,7 +4,7 @@ This file maps safe runtime fingerprints to the environment type agents must use
 
 ## Mandatory Startup Rule
 
-Agents must read this file immediately after `.wbdocs/index.md` and before reading domain, feature, database, or frontend docs. If the current host or runtime is not registered here, the agent must stop, ask the user whether the environment is `production`, `staging`, `dev`, `local`, or `test`, then update this file before continuing.
+Agents must read this file immediately after `.wbdocs/index.md` and before reading domain, feature, database, or frontend docs. If the current host or runtime is not registered here, or if hostname alone does not identify it confidently, the agent must stop, ask the user whether the environment is `production`, `staging`, `dev`, `local`, or `test`, then update this file before continuing.
 
 ## Environment Types
 
@@ -18,7 +18,7 @@ Agents must read this file immediately after `.wbdocs/index.md` and before readi
 
 ## Known Environments
 
-Record only safe identifiers. Do not store secrets, credentials, tokens, private keys, DSNs, or sensitive operational payloads.
+Record only safe identifiers. Do not store secrets, credentials, tokens, private keys, DSNs, or sensitive operational payloads. Hostname alone is often not enough; record enough independent safe fingerprints to distinguish similarly named hosts, containers, or cloned machines.
 
 | Name | Type | Safe Fingerprints | Test Policy | Data/Credential Risk | Notes |
 |---|---|---|---|---|---|
@@ -27,6 +27,7 @@ Record only safe identifiers. Do not store secrets, credentials, tokens, private
 ## Fingerprint Guidance
 
 - Prefer safe, non-secret identifiers such as hostname, container name, deployment name, cloud project alias, or hashed machine/MAC identifiers.
+- Use two or more independent fingerprints for production, staging, shared dev, and any environment that can affect shared data. A hostname-only match is acceptable only when this file explicitly documents that the hostname is unique and stable.
 - Hash or redact identifiers when they reveal private infrastructure details.
 - Never include passwords, tokens, API keys, database URLs, private IP ranges that are sensitive, or personal machine paths.
 - When fingerprints conflict or the current environment is ambiguous, ask the user before proceeding.

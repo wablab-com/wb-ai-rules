@@ -13,7 +13,8 @@ Code without current documentation is a liability. An agent that changes code wi
 1. **Read `.wbdocs/index.md` first.** Always. Without exception.
 2. **Read `.wbdocs/environment.md` next.** Always. Without exception.
 3. Identify the current runtime environment from `.wbdocs/environment.md` before doing anything else:
-   - If the current hostname, machine-id, MAC address, container ID, or other recorded fingerprint is listed, follow the documented environment type and safety policy.
+   - Match the current environment using enough safe fingerprints to be confident. Hostname alone is often not enough; use MAC address, machine-id, container ID, cloud/deployment identifier, or another safe fingerprint when available.
+   - If the current hostname plus the required supporting fingerprint(s) are listed, follow the documented environment type and safety policy.
    - If the current environment is not registered, stop and ask the user to classify it as `production`, `staging`, `dev`, `local`, or `test`.
    - After the user answers, update `.wbdocs/environment.md` with the environment type, safe non-secret host fingerprints, and required safety notes before continuing.
 4. Follow `.wbdocs/index.md` loading order to identify which domain, feature, database, and frontend docs apply to the current task.
@@ -30,6 +31,7 @@ Agents must know which environment they are operating in before starting any tas
 - Agents must not run unit tests, automated tests, integration tests, end-to-end tests, seeders, destructive commands, migrations, schema changes, data cleanup scripts, or fixture loaders against production unless the user gives explicit, task-specific approval and the command is documented as production-safe.
 - On production, treat data, databases, credentials, backups, queues, caches, logs, and external services as critical. Prefer read-only inspection, require explicit approval for writes, and document backup/rollback expectations before risky work.
 - Environment docs must record only safe identifiers and operational notes. Do not store secrets, credentials, tokens, private keys, production DSNs, or sensitive operational payloads.
+- Hostname is only a hint unless the environment doc explicitly says it is unique. Prefer two or more independent safe fingerprints for production, staging, shared dev, and any host that can affect shared data.
 - If environment identity is ambiguous or contradictory, stop and ask the user before proceeding.
 
 ---
