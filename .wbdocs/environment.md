@@ -24,6 +24,11 @@ Record only safe identifiers. Do not store secrets, credentials, tokens, private
 |---|---|---|---|---|---|
 | Local rules workspace | `local` | `hostname=ahmadfds`, `machine-id-sha256=9ee036a2682154ee04476c8debe9be7b4f159c643731da5ee2f5969630859517` | Documentation validation and read-only Git/file inspection are allowed. No database or external-service tests are expected for this repository. | No application runtime data store is documented for this rules repository. Do not record secrets or personal operational payloads. | Classified from the local unrestricted workspace context for this repository. |
 
+## Local Tooling Notes
+
+- Git commit and push are available through plain Git in the local rules workspace.
+- GitHub CLI (`gh`) is not installed in the local rules workspace as of the latest publish check; use plain Git for commit/push tasks unless `gh` is installed later.
+
 ## Fingerprint Guidance
 
 - Prefer safe, non-secret identifiers such as hostname, container name, deployment name, cloud project alias, or hashed machine/MAC identifiers.
